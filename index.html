@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Math Escape Room - As 5 Salas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+    <div class="room-wall" id="central-view">
+
+    <h1 class="room-title">Sala Central</h1>
+
+    <p style="color: #ecf0f1; margin-bottom: 30px; font-size: 1.2rem;">Escolha um cofre para decifrar. Você precisa abrir todos para escapar!</p>
+
+   
+
+    <div class="safes-grid" id="safes-grid"></div>
+
+    </div>
+
+
+
+<div class="room-wall hidden" id="puzzle-view">
+
+    <button class="back-btn" onclick="voltarParaCentral()">⬅ Voltar para a Sala Central</button>
+
+   
+
+    <div class="progress-bar">
+
+        <span id="progress-status">Cofre Ativo</span>
+
+    </div>
+
+
+
+    <h1 class="room-title" id="room-title">Título do Cofre</h1>
+
+
+
+    <div class="scenery-container">
+
+        <div class="clue-paper">
+
+            <h3>📜 Pista Encontrada:</h3>
+
+            <p id="clue-text">Carregando enigma...</p>
+
+            <small id="clue-tip">Dica...</small>
+
+        </div>
+
+
+
+        <div class="safe-box">
+
+            <div class="safe-screen">
+
+                <span id="safe-status">TRANCADO</span>
+
+            </div>
+
+           
+
+            <div class="lock-mechanism">
+
+                <div class="digit-control">
+
+                    <button class="arrow-btn" onclick="changeDigit(0, 1)">▲</button>
+
+                    <div class="digit-display" id="d0">0</div>
+
+                    <button class="arrow-btn" onclick="changeDigit(0, -1)">▼</button>
+
+                </div>
+
+                <div class="digit-control">
+
+                    <button class="arrow-btn" onclick="changeDigit(1, 1)">▲</button>
+
+                    <div class="digit-display" id="d1">0</div>
+
+                    <button class="arrow-btn" onclick="changeDigit(1, -1)">▼</button>
+
+                </div>
+
+                <div class="digit-control">
+
+                    <button class="arrow-btn" onclick="changeDigit(2, 1)">▲</button>
+
+                    <div class="digit-display" id="d2">0</div>
+
+                    <button class="arrow-btn" onclick="changeDigit(2, -1)">▼</button>
+
+                </div>
+
+            </div>
+
+
+
+            <button class="action-btn" id="action-btn" onclick="tryUnlock()">INTERAGIR</button>
+
+        </div>
+
+    </div>
+
+   
+
+    <div id="game-feedback" class="game-feedback"></div>
+
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>
